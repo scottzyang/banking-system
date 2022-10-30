@@ -20,8 +20,13 @@ class BankAccount:
         print(f"Account Balance: {self.balance}.")
         return self.balance
 
+    def add_interests(self):
+        interest = self.balance * 0.0083
+        self.balance += interest
+        print(self.balance)
 
-# Tests
+
+# # Tests
 # # Instantiate (create) an account
 # scott_account = BankAccount("Scott Yang", 123456, 200)
 # # deposit
@@ -32,3 +37,5 @@ class BankAccount:
 # scott_account.withdraw(251)
 # # get balance
 # scott_account.get_balance()
+# # add_interests test
+# scott_account.add_interests()
