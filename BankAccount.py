@@ -25,6 +25,9 @@ class BankAccount:
         self.balance += interest
         print(self.balance)
 
+    def print_statement(self):
+        print(f"Name: {self.full_name}\nAccount Number: {self.account_number}\nBalance: {self.balance}")
+
 
 # # Tests
 # # Instantiate (create) an account
@@ -39,3 +42,5 @@ class BankAccount:
 # scott_account.get_balance()
 # # add_interests test
 # scott_account.add_interests()
+# # print statement
+# scott_account.print_statement()
