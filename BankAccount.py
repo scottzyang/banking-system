@@ -8,7 +8,12 @@ class BankAccount:
         self.balance += amount
         print(f"Deposited Amount: {amount}.\nNew Balance: {self.balance}.")
 
+    def withdraw(self, amount):
+        self.balance -= amount
+        print(f"Withdrawn Amount: {amount}.\nNew Balance: {self.balance}.")
 
 
+# Tests
 # scott_account = BankAccount("Scott Yang", 123456, 200)
 # scott_account.deposit(150)
+# scott_account.withdraw(100)
