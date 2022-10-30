@@ -9,11 +9,20 @@ class BankAccount:
         print(f"Deposited Amount: {amount}.\nNew Balance: {self.balance}.")
 
     def withdraw(self, amount):
-        self.balance -= amount
-        print(f"Withdrawn Amount: {amount}.\nNew Balance: {self.balance}.")
+        if amount > self.balance:
+            print("Insufficient Funds.")
+            self.balance -= 10
+        else:
+            self.balance -= amount
+            print(f"Withdrawn Amount: {amount}.\nNew Balance: {self.balance}.")
 
 
-# Tests
+# # Tests
+# # Instantiate (create) an account
 # scott_account = BankAccount("Scott Yang", 123456, 200)
+# # deposit
 # scott_account.deposit(150)
+# # withdraw and display new balance
 # scott_account.withdraw(100)
+# # withdraw and display insufficient funds
+# scott_account.withdraw(251)
