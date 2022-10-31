@@ -12,32 +12,36 @@ class BankAccount:
             self.account_number = ''.join(["{}".format(randint(0, 9)) for num in range(8)])
 
     def deposit(self, amount):
-        # check is deposited amount is valid
+        # outputs error message if user inputs invalid deposit amount
         if amount <= 0:
             print(f"Unable to complete transaction. Please try again.\n")
         else:
+        # outputs correct new balance based on user inputted amount
             self.balance += amount
             print(f"Deposited Amount: {amount}\nNew Balance: {self.__round()}\n")
 
     def withdraw(self, amount):
-        # check if overdraft fees are needed
+        # outputs error message if user inputted amount is greater than current balance
         if amount > self.balance:
             print("Insufficient Funds\n")
             self.balance -= amount + 10
             self.__round()
         else:
+        # outputs correct new balance based on user inputted amount
             self.balance -= amount
             print(f"Withdrawn Amount: {amount}\nNew Balance: {self.__round()}\n")
     
     def get_balance(self):
+        # outputs current account balance
         print(f"Account Balance: {self.balance}\n")
         return self.__round()
 
     def add_interests(self):
-        # verify balance to see if interests can be added
-        if self.balance < 0:
-            print(f"Error: Cannot add interest to a negative balance\n")
+        # outputs error message if current balance is 0 or less
+        if self.balance <= 0:
+            print(f"Error: Cannot add interest. Insufficient Funds.\n")
         else: 
+        # adds correct interest and rounds to nearest hundredth
             interest = self.balance * 0.0083
             self.balance += interest
             self.__round()
