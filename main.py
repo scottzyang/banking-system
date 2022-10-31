@@ -31,7 +31,7 @@ scott_account.print_statement()
 willy_account = BankAccount("Willy Sana", 3000)
 # outputs 3000
 willy_account.get_balance()
-# outputs error message
+# outputs error
 willy_account.deposit(-4000)
 # rounds to nearest cent and outputs 4500
 willy_account.deposit(1500)
@@ -41,3 +41,12 @@ willy_account.withdraw(5000)
 willy_account.add_interests()
 # outputs new balance & account no.
 willy_account.print_statement()
+
+# ---------------------------------------------------------------
+mitchell = BankAccount("Mitchell", 0, "03141592")
+mitchell.deposit(400000)
+mitchell.print_statement()
+mitchell.add_interests()
+mitchell.print_statement()
+mitchell.withdraw(150)
+mitchell.print_statement()

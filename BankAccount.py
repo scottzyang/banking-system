@@ -1,10 +1,13 @@
 from random import randint
 
 class BankAccount:
-    def __init__(self, full_name, balance = 0):
+    def __init__(self, full_name, balance = 0, account_number = None):
         self.full_name = full_name
-        self.account_number = randint(10000000, 99999999) 
+        self.account_number = account_number
         self.balance = balance
+        if account_number is None:
+            # list comprehension to generate a string of numbers
+            self.account_number = ''.join(["{}".format(randint(0, 9)) for num in range(8)])
 
     def deposit(self, amount):
         if amount <= 0:
