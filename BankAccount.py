@@ -24,9 +24,12 @@ class BankAccount:
         return self.__round()
 
     def add_interests(self):
-        interest = self.balance * 0.0083
-        self.balance += interest
-        self.__round()
+        if self.balance < 0:
+            print(f"Error: Cannot add interest to a negative balance\n")
+        else: 
+            interest = self.balance * 0.0083
+            self.balance += interest
+            self.__round()
 
     def print_statement(self):
         print(f"Name: {self.full_name}\nAccount Number: {self.account_number}\nBalance: {self.balance}\n")

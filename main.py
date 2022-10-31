@@ -35,5 +35,7 @@ willy_account.get_balance()
 willy_account.deposit(1500)
 # outputs overdraft message, -510 balance, and charge overdraft fee
 willy_account.withdraw(5000)
+# outputs error message
+willy_account.add_interests()
 # outputs new balance & account no.
 willy_account.print_statement()
