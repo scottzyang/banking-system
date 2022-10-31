@@ -1,4 +1,3 @@
-from codecs import backslashreplace_errors
 from random import randint
 
 class BankAccount:
