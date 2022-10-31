@@ -12,7 +12,7 @@ class BankAccount:
 
     def withdraw(self, amount):
         if amount > self.balance:
-            print("Insufficient Funds")
+            print("Insufficient Funds\n")
             self.balance -= amount + 10
             self.__round()
         else:

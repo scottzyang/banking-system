@@ -28,3 +28,12 @@ scott_account.add_interests()
 scott_account.print_statement()
 
 # ---------------------------------------------------------------
+willy_account = BankAccount("Willy Sana", 3000)
+# outputs 3000
+willy_account.get_balance()
+# rounds to nearest cent and outputs 4500
+willy_account.deposit(1500)
+# outputs overdraft message, -510 balance, and charge overdraft fee
+willy_account.withdraw(5000)
+# outputs new balance & account no.
+willy_account.print_statement()
