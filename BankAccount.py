@@ -18,7 +18,7 @@ class BankAccount:
         else:
         # outputs correct new balance based on user inputted amount
             self.balance += amount
-            print(f"Deposited Amount: {amount}\nNew Balance: {self.__round()}\n")
+            print(f"Deposited Amount: ${amount}\nNew Balance: ${self.__round()}\n")
 
     def withdraw(self, amount):
         # outputs error message if user inputted amount is greater than current balance
@@ -29,11 +29,11 @@ class BankAccount:
         else:
         # outputs correct new balance based on user inputted amount
             self.balance -= amount
-            print(f"Withdrawn Amount: {amount}\nNew Balance: {self.__round()}\n")
+            print(f"Withdrawn Amount: ${amount}\nNew Balance: ${self.__round()}\n")
     
     def get_balance(self):
         # outputs current account balance
-        print(f"Account Balance: {self.balance}\n")
+        print(f"Account Balance: ${self.balance}\n")
         return self.__round()
 
     def add_interests(self):
@@ -47,7 +47,7 @@ class BankAccount:
             self.__round()
 
     def print_statement(self):
-        print(f"Name: {self.full_name}\nAccount Number: {self.account_number}\nBalance: {self.balance}\n")
+        print(f"Name: {self.full_name}\nAccount Number: {self.account_number}\nBalance: ${self.balance}\n")
     
     # private method to round to nearest cent
     def __round(self):
