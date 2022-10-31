@@ -8,27 +8,32 @@ class BankAccount:
 
     def deposit(self, amount):
         self.balance += amount
-        print(f"Deposited Amount: {amount}\nNew Balance: {self.balance}\n")
+        print(f"Deposited Amount: {amount}\nNew Balance: {self.__round()}\n")
 
     def withdraw(self, amount):
         if amount > self.balance:
             print("Insufficient Funds")
             self.balance -= amount + 10
+            self.__round()
         else:
             self.balance -= amount
-            print(f"Withdrawn Amount: {amount}\nNew Balance: {self.balance}\n")
+            print(f"Withdrawn Amount: {amount}\nNew Balance: {self.__round()}\n")
     
     def get_balance(self):
         print(f"Account Balance: {self.balance}\n")
-        return self.balance
+        return self.__round()
 
     def add_interests(self):
         interest = self.balance * 0.0083
         self.balance += interest
-        self.balance = round(self.balance, 2)
+        self.__round()
 
     def print_statement(self):
         print(f"Name: {self.full_name}\nAccount Number: {self.account_number}\nBalance: {self.balance}\n")
+    
+    def __round(self):
+        self.balance = round(self.balance, 2)
+        return self.balance
 
 
 # create/instantiate 3 bank account examples
