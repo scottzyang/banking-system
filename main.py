@@ -31,6 +31,8 @@ scott_account.print_statement()
 willy_account = BankAccount("Willy Sana", 3000)
 # outputs 3000
 willy_account.get_balance()
+# outputs error message
+willy_account.deposit(-4000)
 # rounds to nearest cent and outputs 4500
 willy_account.deposit(1500)
 # outputs overdraft message, -510 balance, and charge overdraft fee

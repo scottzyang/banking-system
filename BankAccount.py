@@ -7,8 +7,11 @@ class BankAccount:
         self.balance = balance
 
     def deposit(self, amount):
-        self.balance += amount
-        print(f"Deposited Amount: {amount}\nNew Balance: {self.__round()}\n")
+        if amount <= 0:
+            print(f"Unable to complete transaction. Please try again.\n")
+        else:
+            self.balance += amount
+            print(f"Deposited Amount: {amount}\nNew Balance: {self.__round()}\n")
 
     def withdraw(self, amount):
         if amount > self.balance:
