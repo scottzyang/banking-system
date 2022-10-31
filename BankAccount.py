@@ -1,3 +1,4 @@
+from codecs import backslashreplace_errors
 from random import randint
 
 class BankAccount:
@@ -17,24 +18,25 @@ class BankAccount:
             print(f"Unable to complete transaction. Please try again.\n")
         else:
         # outputs correct new balance based on user inputted amount
+            amount = self.__round(amount)
             self.balance += amount
-            print(f"Deposited Amount: ${amount}\nNew Balance: ${self.__round()}\n")
+            print(f"Deposited Amount: ${amount}\nNew Balance: ${self.__round(self.balance)}\n")
 
     def withdraw(self, amount):
         # outputs error message if user inputted amount is greater than current balance
         if amount > self.balance:
             print("Insufficient Funds\n")
             self.balance -= amount + 10
-            self.__round()
         else:
         # outputs correct new balance based on user inputted amount
+            amount = self.__round(amount)
             self.balance -= amount
-            print(f"Withdrawn Amount: ${amount}\nNew Balance: ${self.__round()}\n")
+            print(f"Withdrawn Amount: ${amount}\nNew Balance: ${self.balance}\n")
     
     def get_balance(self):
         # outputs current account balance
         print(f"Account Balance: ${self.balance}\n")
-        return self.__round()
+        return self.balance
 
     def add_interests(self):
         # outputs error message if current balance is 0 or less
@@ -44,15 +46,15 @@ class BankAccount:
         # adds correct interest and rounds to nearest hundredth
             interest = self.balance * 0.0083
             self.balance += interest
-            self.__round()
+            self.balance = self.__round(self.balance)
 
     def print_statement(self):
         print(f"Name: {self.full_name}\nAccount Number: {self.account_number}\nBalance: ${self.balance}\n")
     
     # private method to round to nearest cent
-    def __round(self):
-        self.balance = round(self.balance, 2)
-        return self.balance
+    def __round(self, amount):
+        amount = round(amount, 2)
+        return amount
 
 
 
